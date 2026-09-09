@@ -1,13 +1,18 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://davidviejo.com/",
+      "statusCode": 301
+    }
+  ],
   "headers": [
     {
-      "source": "/clientes/(.*)",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "X-Robots-Tag",
-          "value": "noindex, nofollow, noarchive"
+          "value": "noindex, nofollow, noarchive, nosnippet, noimageindex"
         }
       ]
     }
