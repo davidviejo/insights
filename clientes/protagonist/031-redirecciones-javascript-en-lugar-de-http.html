@@ -1,0 +1,93 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Redirecciones JavaScript en lugar de HTTP · PLAUD · TPL-031</title><style>
+:root{--navy:#0B1E4B;--navy2:#162D6E;--coral:#FF6B5A;--paper:#F4F6FB;--white:#fff;--ink:#0B1E4B;--muted:#667085;--line:#DDE2F0;--red:#B91C1C;--amber:#92400E;--green:#166534}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif}
+a{color:inherit}.sitebar{background:var(--navy);color:white;border-bottom:4px solid var(--coral)}.sitebar .inner{max-width:1240px;margin:auto;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.wordmark{font-weight:950;letter-spacing:-.045em;font-size:24px}.wordmark i{font-style:normal;color:var(--coral)}.role{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:#c8d3ee;margin-top:3px}.bank{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#dce5fa}
+.wrap{max-width:1240px;margin:auto;padding:34px 26px 70px}.nav{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:0 0 28px}.nav a{border:1px solid #bcc8df;background:white;border-radius:999px;text-decoration:none;padding:9px 13px;font-size:12px;font-weight:800}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:28px;align-items:end;padding:34px 0 36px;border-bottom:1px solid var(--line)}.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:900}.kicker span{background:var(--coral);color:white;padding:5px 8px}
+h1{font-size:clamp(42px,6vw,80px);line-height:.92;letter-spacing:-.055em;margin:16px 0 20px;max-width:980px}.lead{font-size:18px;line-height:1.55;color:#475467;max-width:900px;margin:0}
+.scorebox{background:var(--navy);color:#fff;padding:22px;border-radius:8px}.scorebox small{display:block;color:#becbea;font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}.scorebox b{font-size:28px}.scorebox .row{border-top:1px solid rgba(255,255,255,.15);margin-top:14px;padding-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.scorebox .row b{font-size:18px}
+.section{padding:30px 0;border-bottom:1px solid var(--line)}.section-label{font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:900;color:#667085;margin-bottom:14px}.section-label strong{color:var(--coral)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid var(--line);padding:22px;border-radius:8px}.card.dark{background:var(--navy);color:#fff}.card h2,.card h3{margin:0 0 10px}.card p{line-height:1.55;margin:0;color:#526079}.card.dark p{color:#dce5fa}.callout{font-size:25px;line-height:1.28;font-weight:800;letter-spacing:-.03em}
+.pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}.pill{display:inline-flex;border:1px solid #cbd5e1;border-radius:999px;padding:7px 9px;font-size:11px;font-weight:850;text-transform:uppercase;background:#fff}.pill.p1{background:var(--navy);color:#fff}.pill.impact{border-color:var(--coral);color:#c24135}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.stat{background:white;border:1px solid var(--line);padding:15px}.stat small{display:block;color:#7b8496;text-transform:uppercase;font-size:9px;letter-spacing:.12em}.stat b{font-size:25px;display:block;margin-top:3px}
+table{border-collapse:collapse;width:100%;background:#fff;border:1px solid var(--line)}th{background:#eaf0fa;color:var(--navy);font-size:10px;text-align:left;padding:9px}td{padding:9px;border-top:1px solid var(--line);font-size:11px;vertical-align:top;overflow-wrap:anywhere}.url{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.step{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-top:1px solid var(--line)}.step:first-child{border-top:0}.stepnum{width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:900;flex:0 0 auto}.step b{display:block;font-size:13px;margin-bottom:3px}.step span{font-size:11px;color:#606b80;line-height:1.45}
+.checks{list-style:none;padding:0;margin:0}.checks li{padding:9px 0 9px 26px;border-top:1px solid #e5e7eb;position:relative;font-size:12px;line-height:1.45}.checks li:before{content:"✓";position:absolute;left:0;top:9px;width:17px;height:17px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900;font-size:10px}
+.quote{background:var(--navy);color:#fff;padding:28px;border-radius:8px;font-size:25px;font-weight:750;line-height:1.3}.quote:before{content:"“";color:var(--coral);font-size:60px;line-height:0;vertical-align:-18px;margin-right:6px}
+.email-card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}.email-top{background:var(--navy);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;gap:12px}.email-body{padding:20px;font-size:13px;line-height:1.65;white-space:pre-line}.short-message{margin-top:14px;padding:16px;background:#eef3fb;border-left:4px solid var(--coral);font-size:12px;line-height:1.6;white-space:pre-line}
+.client-template-grid{display:grid;grid-template-columns:1.55fr .85fr;gap:18px}.bottom{display:flex;justify-content:space-between;gap:20px;padding-top:30px;font-size:10px;color:#667085}.btn{display:inline-block;background:var(--navy);color:white;padding:10px 14px;text-decoration:none;font-weight:800;border-radius:4px}
+@media(max-width:850px){.hero,.grid2,.grid3,.client-template-grid,.stats{grid-template-columns:1fr}.wrap{padding:22px 16px}}
+</style></head><body>
+<header class="sitebar"><div class="inner"><div><div class="wordmark">agencia<i>seo</i>.eu</div><div class="role">SEO STRATEGIC · AUDITORÍA PLAUD</div></div><div class="bank">PLAYBOOK TPL · SEP26</div></div></header>
+<main class="wrap">
+<div class="nav"><a href="index.html">← Índice TPL</a><a href="execution/031-redirecciones-javascript-en-lugar-de-http-sheet.html">Hoja de ejecución →</a></div>
+<section class="hero"><div>
+<div class="kicker"><span>CASO 031</span> &nbsp; Rendimiento &amp; JavaScript</div>
+<h1>Redirecciones JavaScript en lugar de HTTP</h1>
+<p class="lead">Cambios permanentes dependen de location.href o lógica cliente.</p>
+<div class="pills"><span class="pill p1">P1</span><span class="pill impact">Impacto ALTO</span><span class="pill">Caso Playbook: 031</span><span class="pill">Plantilla utilizada: TPL-031</span></div>
+</div><aside class="scorebox"><small>LECTURA EJECUTIVA</small><b>TÉCNICO</b>
+<div class="row"><div><small>Filas de ejecución</small><b>11</b></div><div><small>Estado</small><b>PENDIENTE</b></div></div></aside></section>
+
+<section class="section"><div class="section-label"><strong>01</strong> · Qué está pasando</div>
+<div class="grid2"><div class="card"><h2>Diagnóstico PLAUD</h2><p class="callout">11 redirects JS corregidos en la hoja: LCP se expresa ahora en segundos, como exige la TPL.</p></div>
+<div class="card dark"><h2>Impacto de negocio</h2><p class="callout">La mudanza existe solo después de ejecutar código.</p></div></div></section>
+
+<section class="section"><div class="section-label"><strong>02</strong> · Evidencia real</div>
+<div class="stats"><div class="stat"><small>Filas</small><b>11</b></div><div class="stat"><small>Fuente</small><b style="font-size:17px">Audit + SF</b></div><div class="stat"><small>Confianza</small><b style="font-size:17px">ALTA / MEDIA</b></div><div class="stat"><small>TPL</small><b>TPL-031</b></div></div>
+<p>Las 11 son colecciones; no se propone abrir sort_by en robots.</p><table><thead><tr><th>Plantilla / URL</th><th>Dispositivo</th><th>LCP (s)</th><th>INP (ms)</th><th>CLS</th><th>HTML inicial</th></tr></thead><tbody><tr><td class='url'>https://es.plaud.ai/collections/kol-exclusive-offer</td><td class='url'>Móvil/desktop</td><td class='url'>6.6</td><td class='url'></td><td class='url'>0.0</td><td class='url'>HTTP 200 HTML</td></tr><tr><td class='url'>https://es.plaud.ai/collections/plaud-notepin-accessories</td><td class='url'>Móvil/desktop</td><td class='url'>7.13</td><td class='url'></td><td class='url'>0.0</td><td class='url'>HTTP 200 HTML</td></tr><tr><td class='url'>https://es.plaud.ai/collections/plaud-notepin</td><td class='url'>Móvil/desktop</td><td class='url'>6.9</td><td class='url'></td><td class='url'>0.0</td><td class='url'>HTTP 200 HTML</td></tr><tr><td class='url'>https://es.plaud.ai/collections/accesorio-plaud-note-pro</td><td class='url'>Móvil/desktop</td><td class='url'>6.75</td><td class='url'></td><td class='url'>0.0</td><td class='url'>HTTP 200 HTML</td></tr><tr><td class='url'>https://es.plaud.ai/collections/plaud-note-accessories</td><td class='url'>Móvil/desktop</td><td class='url'>6.75</td><td class='url'></td><td class='url'>0.0</td><td class='url'>HTTP 200 HTML</td></tr><tr><td class='url'>https://es.plaud.ai/collections/app-membership</td><td class='url'>Móvil/desktop</td><td class='url'>6.9</td><td class='url'></td><td class='url'>0.0</td><td class='url'>HTTP 200 HTML</td></tr><tr><td class='url'>https://es.plaud.ai/collections/accessories</td><td class='url'>Móvil/desktop</td><td class='url'>7.35</td><td class='url'></td><td class='url'>0.0</td><td class='url'>HTTP 200 HTML</td></tr><tr><td class='url'>https://es.plaud.ai/collections/related-products</td><td class='url'>Móvil/desktop</td><td class='url'>6.23</td><td class='url'></td><td class='url'>0.0</td><td class='url'>HTTP 200 HTML</td></tr></tbody></table>
+<p style="font-size:11px;color:#667085;margin-top:10px">Vista previa: 8 filas. La hoja de ejecución contiene el inventario completo del caso.</p></section>
+
+<section class="section"><div class="section-label"><strong>03</strong> · Cómo investigarlo</div>
+<div class="grid3"><div class="card"><h3>Hipótesis principal</h3><p>La migración se resolvió en frontend sin códigos HTTP adecuados.</p></div>
+<div class="card"><h3>Evidencia / causas</h3><ul class="checks"><li>lcp</li><li>inp</li><li>cls</li><li>initial_html</li></ul></div>
+<div class="card"><h3>No asumir</h3><p>[&#x27;No concluir causalidad solo por correlación temporal.&#x27;, &#x27;No ejecutar cambios a escala sin confirmar una muestra representativa.&#x27;, &#x27;No tratar una señal de herramienta como diagnóstico definitivo.&#x27;]</p></div></div>
+<div class="card" style="margin-top:16px"><h3>Alternativas</h3><ul class="checks"><li>problema solo de laboratorio</li><li>terceros temporales</li><li>script sin impacto SEO material</li></ul></div></section>
+
+<section class="section"><div class="section-label"><strong>04</strong> · Plan de acción</div><div class="card">
+<div class="step"><div class="stepnum">1</div><div><b>Confirmar alcance</b><span>Las 11 son colecciones; no se propone abrir sort_by en robots.</span></div></div>
+<div class="step"><div class="stepnum">2</div><div><b>Implementar</b><span>Implementar 301/308 de servidor para movimientos permanentes.</span></div></div>
+<div class="step"><div class="stepnum">3</div><div><b>Decisión PLAUD</b><span>No desbloquear sort_by para compensar; eliminar la dependencia del redirect JS.</span></div></div>
+</div></section>
+
+<section class="section"><div class="section-label"><strong>05</strong> · Criterio de cierre</div>
+<div class="grid2"><div class="card"><h2>QA técnico</h2><p>Las herramientas reciben redirección HTTP directa antes del render. · Compare before/after using the same segment and measurement definition. · Document implementation date and affected sample.</p></div>
+<div class="card"><h2>Plantilla oficial</h2><p><strong>Plantilla utilizada: TPL-031</strong></p><p>Las columnas de ejecución se han mantenido completas conforme a <code>execution_sheet_columns</code>.</p></div></div></section>
+
+<section class="section"><div class="section-label"><strong>06</strong> · Explicación para cliente</div>
+<div class="quote">La mudanza existe solo después de ejecutar código.</div></section>
+
+<section class="section"><div class="section-label"><strong>07</strong> · Plantilla para comunicar al cliente</div>
+<div class="client-template-grid"><div class="email-card"><div class="email-top"><b>Correo resuelto para PLAUD</b><span>TPL-031</span></div>
+<div class="email-body">Hola equipo PLAUD,
+
+Revisando es.plaud.ai, he detectado un punto SEO que conviene trabajar:
+
+Redirecciones JavaScript en lugar de HTTP
+
+Qué estamos viendo
+Cambios permanentes dependen de location.href o lógica cliente.
+
+Por qué importa
+La mudanza existe solo después de ejecutar código.
+
+Lo considero una prioridad alta porque puede limitar directamente la visibilidad o la transferencia de señales.
+
+Qué propongo
+Implementar 301/308 de servidor para movimientos permanentes.
+
+Una vez implementado, validaremos que las herramientas reciben redirección http directa antes del render.
+
+Si os parece bien, lo incorporamos al roadmap como P1 y dejamos documentado el antes y el después.
+
+Gracias,
+David</div></div><div class="card"><h2>Mensaje corto</h2><div class="short-message">Equipo PLAUD: Redirecciones JavaScript en lugar de HTTP. 11 redirects JS corregidos en la hoja: LCP se expresa ahora en segundos, como exige la TPL. Propuesta: Implementar 301/308 de servidor para movimientos permanentes. Cierre: QA documentado.</div></div></div></section>
+
+<section class="section"><div class="section-label"><strong>08</strong> · Hoja de ejecución</div>
+<div class="card dark"><h2>EXECUTION SHEET · TPL-031</h2><p>13 columnas oficiales · 11 filas precargadas con evidencia real.</p>
+<p style="margin-top:14px"><a class="btn" style="background:white;color:#0B1E4B" href="execution/031-redirecciones-javascript-en-lugar-de-http-sheet.html">Abrir hoja operativa →</a></p></div></section>
+
+<div class="bottom"><div>PLAUD · Auditoría SEP26 · fuentes: Audit M3 + Screaming Frog + histórico KWR + robots/sitemap cuando aplica.</div><div><strong>PLANTILLA UTILIZADA: TPL-031</strong></div></div>
+</main></body></html>

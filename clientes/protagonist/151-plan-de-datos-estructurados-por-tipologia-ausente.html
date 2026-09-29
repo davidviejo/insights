@@ -1,0 +1,93 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plan de datos estructurados por tipología ausente · PLAUD · TPL-151</title><style>
+:root{--navy:#0B1E4B;--navy2:#162D6E;--coral:#FF6B5A;--paper:#F4F6FB;--white:#fff;--ink:#0B1E4B;--muted:#667085;--line:#DDE2F0;--red:#B91C1C;--amber:#92400E;--green:#166534}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif}
+a{color:inherit}.sitebar{background:var(--navy);color:white;border-bottom:4px solid var(--coral)}.sitebar .inner{max-width:1240px;margin:auto;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.wordmark{font-weight:950;letter-spacing:-.045em;font-size:24px}.wordmark i{font-style:normal;color:var(--coral)}.role{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:#c8d3ee;margin-top:3px}.bank{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#dce5fa}
+.wrap{max-width:1240px;margin:auto;padding:34px 26px 70px}.nav{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:0 0 28px}.nav a{border:1px solid #bcc8df;background:white;border-radius:999px;text-decoration:none;padding:9px 13px;font-size:12px;font-weight:800}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:28px;align-items:end;padding:34px 0 36px;border-bottom:1px solid var(--line)}.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:900}.kicker span{background:var(--coral);color:white;padding:5px 8px}
+h1{font-size:clamp(42px,6vw,80px);line-height:.92;letter-spacing:-.055em;margin:16px 0 20px;max-width:980px}.lead{font-size:18px;line-height:1.55;color:#475467;max-width:900px;margin:0}
+.scorebox{background:var(--navy);color:#fff;padding:22px;border-radius:8px}.scorebox small{display:block;color:#becbea;font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}.scorebox b{font-size:28px}.scorebox .row{border-top:1px solid rgba(255,255,255,.15);margin-top:14px;padding-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.scorebox .row b{font-size:18px}
+.section{padding:30px 0;border-bottom:1px solid var(--line)}.section-label{font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:900;color:#667085;margin-bottom:14px}.section-label strong{color:var(--coral)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid var(--line);padding:22px;border-radius:8px}.card.dark{background:var(--navy);color:#fff}.card h2,.card h3{margin:0 0 10px}.card p{line-height:1.55;margin:0;color:#526079}.card.dark p{color:#dce5fa}.callout{font-size:25px;line-height:1.28;font-weight:800;letter-spacing:-.03em}
+.pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}.pill{display:inline-flex;border:1px solid #cbd5e1;border-radius:999px;padding:7px 9px;font-size:11px;font-weight:850;text-transform:uppercase;background:#fff}.pill.p1{background:var(--navy);color:#fff}.pill.impact{border-color:var(--coral);color:#c24135}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.stat{background:white;border:1px solid var(--line);padding:15px}.stat small{display:block;color:#7b8496;text-transform:uppercase;font-size:9px;letter-spacing:.12em}.stat b{font-size:25px;display:block;margin-top:3px}
+table{border-collapse:collapse;width:100%;background:#fff;border:1px solid var(--line)}th{background:#eaf0fa;color:var(--navy);font-size:10px;text-align:left;padding:9px}td{padding:9px;border-top:1px solid var(--line);font-size:11px;vertical-align:top;overflow-wrap:anywhere}.url{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.step{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-top:1px solid var(--line)}.step:first-child{border-top:0}.stepnum{width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:900;flex:0 0 auto}.step b{display:block;font-size:13px;margin-bottom:3px}.step span{font-size:11px;color:#606b80;line-height:1.45}
+.checks{list-style:none;padding:0;margin:0}.checks li{padding:9px 0 9px 26px;border-top:1px solid #e5e7eb;position:relative;font-size:12px;line-height:1.45}.checks li:before{content:"✓";position:absolute;left:0;top:9px;width:17px;height:17px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900;font-size:10px}
+.quote{background:var(--navy);color:#fff;padding:28px;border-radius:8px;font-size:25px;font-weight:750;line-height:1.3}.quote:before{content:"“";color:var(--coral);font-size:60px;line-height:0;vertical-align:-18px;margin-right:6px}
+.email-card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}.email-top{background:var(--navy);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;gap:12px}.email-body{padding:20px;font-size:13px;line-height:1.65;white-space:pre-line}.short-message{margin-top:14px;padding:16px;background:#eef3fb;border-left:4px solid var(--coral);font-size:12px;line-height:1.6;white-space:pre-line}
+.client-template-grid{display:grid;grid-template-columns:1.55fr .85fr;gap:18px}.bottom{display:flex;justify-content:space-between;gap:20px;padding-top:30px;font-size:10px;color:#667085}.btn{display:inline-block;background:var(--navy);color:white;padding:10px 14px;text-decoration:none;font-weight:800;border-radius:4px}
+@media(max-width:850px){.hero,.grid2,.grid3,.client-template-grid,.stats{grid-template-columns:1fr}.wrap{padding:22px 16px}}
+</style></head><body>
+<header class="sitebar"><div class="inner"><div><div class="wordmark">agencia<i>seo</i>.eu</div><div class="role">SEO STRATEGIC · AUDITORÍA PLAUD</div></div><div class="bank">PLAYBOOK TPL · SEP26</div></div></header>
+<main class="wrap">
+<div class="nav"><a href="index.html">← Índice TPL</a><a href="execution/151-plan-de-datos-estructurados-por-tipologia-ausente-sheet.html">Hoja de ejecución →</a></div>
+<section class="hero"><div>
+<div class="kicker"><span>CASO 151</span> &nbsp; Datos estructurados &amp; Entidades</div>
+<h1>Plan de datos estructurados por tipología ausente</h1>
+<p class="lead">El marcado se aplica de forma desigual: cada tipología de página lleva el schema que le tocó y no existe un plan que declare qué tipo corresponde a cada una.</p>
+<div class="pills"><span class="pill p1">P2</span><span class="pill impact">Impacto MEDIO</span><span class="pill">Caso Playbook: 151</span><span class="pill">Plantilla utilizada: TPL-151</span></div>
+</div><aside class="scorebox"><small>LECTURA EJECUTIVA</small><b>ENTIDADES</b>
+<div class="row"><div><small>Filas de ejecución</small><b>8</b></div><div><small>Estado</small><b>PENDIENTE</b></div></div></aside></section>
+
+<section class="section"><div class="section-label"><strong>01</strong> · Qué está pasando</div>
+<div class="grid2"><div class="card"><h2>Diagnóstico PLAUD</h2><p class="callout">El export de structured data contiene 42 URLs /products/ con errores; 21 son indexables. El patrón de validación confirmado por el usuario es `referencePrice` dentro de `priceSpecification`.</p></div>
+<div class="card dark"><h2>Impacto de negocio</h2><p class="callout">Sin plan por tipología el marcado se rehace en cada cambio de plantilla y las tipologías con más valor comercial quedan sin cubrir.</p></div></div></section>
+
+<section class="section"><div class="section-label"><strong>02</strong> · Evidencia real</div>
+<div class="stats"><div class="stat"><small>Filas</small><b>8</b></div><div class="stat"><small>Fuente</small><b style="font-size:17px">Audit + SF</b></div><div class="stat"><small>Confianza</small><b style="font-size:17px">ALTA / MEDIA</b></div><div class="stat"><small>TPL</small><b>TPL-151</b></div></div>
+<p>Home, Product/Offer, planes/suscripciones, pricing, colecciones, artículos, soluciones y contacto. La corrección de Product se apoya en el error real de validación y en el markup admitido por Google.</p><table><thead><tr><th>Tipología de página</th><th>URL de ejemplo</th><th>Schema recomendado</th><th>Schema actual</th><th>Propiedades obligatorias</th><th>Propiedades ausentes</th></tr></thead><tbody><tr><td class='url'>Inicio</td><td class='url'>https://es.plaud.ai/</td><td class='url'>Organization + WebSite</td><td class='url'>Organization, ImageObject, ContactPoint, WebSite</td><td class='url'>Organization y WebSite con @id estables; publisher conectado.</td><td class='url'>Conservar Organization/WebSite existentes y usar @id para reutilizarlos desde páginas hijas.</td></tr><tr><td class='url'>Producto</td><td class='url'>https://es.plaud.ai/products/plaud-note-ai-voice-recorder</td><td class='url'>Product + Offer + BreadcrumbList</td><td class='url'>BreadcrumbList, ListItem, Product, Brand</td><td class='url'>name, image, description, brand, Offer, priceCurrency, price, availability.</td><td class='url'>Error confirmado en productos: `referencePrice` dentro de `priceSpecification`. La validación de Screaming Frog marca errores en páginas Product/Offer.</td></tr><tr><td class='url'>Plan / Suscripción</td><td class='url'>https://es.plaud.ai/products/plaud-ai-annual-pro-plan</td><td class='url'>Product + Offer + BreadcrumbList</td><td class='url'>BreadcrumbList, ListItem, Product, Brand</td><td class='url'>El plan vendible se trata como Product; Offer con precio/moneda/availability reales.</td><td class='url'>Error confirmado en productos: `referencePrice` dentro de `priceSpecification`. La validación de Screaming Frog marca errores en páginas Product/Offer.</td></tr><tr><td class='url'>Página de planes</td><td class='url'>https://es.plaud.ai/pages/plaud-ai-plan-pricing</td><td class='url'>CollectionPage + ItemList de Product/Offer</td><td class='url'>FAQPage, Question, Answer</td><td class='url'>Listado de planes; cada plan debe usar datos reales, no placeholders en producción.</td><td class='url'>Revisar propiedades actuales frente al ejemplo; el audit detecta gaps por tipología en parte de páginas/colecciones.</td></tr><tr><td class='url'>Colección</td><td class='url'>https://es.plaud.ai/collections/plaud-note</td><td class='url'>CollectionPage + ItemList + BreadcrumbList</td><td class='url'>BreadcrumbList, ListItem, CollectionPage, ItemList</td><td class='url'>ItemList con URLs/nombres reales de productos.</td><td class='url'>Revisar propiedades actuales frente al ejemplo; el audit detecta gaps por tipología en parte de páginas/colecciones.</td></tr><tr><td class='url'>Artículo</td><td class='url'>https://es.plaud.ai/blogs/articles/como-redactar-acta-reunion-con-ia</td><td class='url'>BlogPosting + BreadcrumbList</td><td class='url'>BreadcrumbList, ListItem, Article, WebPage</td><td class='url'>headline, datePublished, dateModified, author/publisher.</td><td class='url'>Revisar propiedades actuales frente al ejemplo; el audit detecta gaps por tipología en parte de páginas/colecciones.</td></tr><tr><td class='url'>Solución / Página</td><td class='url'>https://es.plaud.ai/pages/solution-for-sales</td><td class='url'>WebPage + BreadcrumbList</td><td class='url'>FAQPage, Question, Answer</td><td class='url'>WebPage conectado al WebSite/Organization global.</td><td class='url'>Revisar propiedades actuales frente al ejemplo; el audit detecta gaps por tipología en parte de páginas/colecciones.</td></tr><tr><td class='url'>Contacto</td><td class='url'>https://es.plaud.ai/pages/contact-us</td><td class='url'>ContactPage + Organization/ContactPoint</td><td class='url'>ContactPage</td><td class='url'>ContactPage; ContactPoint solo con datos reales visibles.</td><td class='url'>Revisar propiedades actuales frente al ejemplo; el audit detecta gaps por tipología en parte de páginas/colecciones.</td></tr></tbody></table>
+<p style="font-size:11px;color:#667085;margin-top:10px">Vista previa: 8 filas. La hoja de ejecución contiene el inventario completo del caso.</p></section>
+
+<section class="section"><div class="section-label"><strong>03</strong> · Cómo investigarlo</div>
+<div class="grid3"><div class="card"><h3>Hipótesis principal</h3><p>El marcado se ha ido añadiendo por plugin o por página concreta, sin una definición previa de tipo y propiedades por tipología.</p></div>
+<div class="card"><h3>Evidencia / causas</h3><ul class="checks"><li>required_properties</li><li>missing_properties</li><li>implementation_method</li><li>validation_result</li></ul></div>
+<div class="card"><h3>No asumir</h3><p>[&#x27;No marcar contenido que no es visible en la página.&#x27;, &#x27;No añadir un tipo de schema por el que la página no es elegible.&#x27;, &#x27;No planificar sobre una URL suelta: el plan se define por tipología y se implementa en plantilla.&#x27;]</p></div></div>
+<div class="card" style="margin-top:16px"><h3>Alternativas</h3><ul class="checks"><li>el marcado existe pero se inyecta por JavaScript y no se ve en el HTML inicial</li><li>la tipología no es elegible para ningún rich result</li><li>el plugin ya cubre el tipo y falta solo una propiedad</li></ul></div></section>
+
+<section class="section"><div class="section-label"><strong>04</strong> · Plan de acción</div><div class="card">
+<div class="step"><div class="stepnum">1</div><div><b>Confirmar alcance</b><span>Home, Product/Offer, planes/suscripciones, pricing, colecciones, artículos, soluciones y contacto. La corrección de Product se apoya en el error real de validación y en el markup admitido por Google.</span></div></div>
+<div class="step"><div class="stepnum">2</div><div><b>Implementar</b><span>Corregir la plantilla Product/Offer una sola vez para retirar `referencePrice`. El precio activo se expresa con `price`/`priceCurrency`; el precio original de una oferta, si existe, con `UnitPriceSpecification.priceType = https://schema.org/StrikethroughPrice`.</span></div></div>
+<div class="step"><div class="stepnum">3</div><div><b>Decisión PLAUD</b><span>Corregir la plantilla Product/Offer una sola vez para retirar `referencePrice`. El precio activo se expresa con `price`/`priceCurrency`; el precio original de una oferta, si existe, con `UnitPriceSpecification.priceType = https://schema.org/StrikethroughPrice`.</span></div></div>
+</div></section>
+
+<section class="section"><div class="section-label"><strong>05</strong> · Criterio de cierre</div>
+<div class="grid2"><div class="card"><h2>QA técnico</h2><p>Cada tipología de página tiene su tipo de schema declarado, implementado en plantilla y validado sin errores. · Compare before/after using the same segment and measurement definition. · Document implementation date, sources and affected sample.</p></div>
+<div class="card"><h2>Plantilla oficial</h2><p><strong>Plantilla utilizada: TPL-151</strong></p><p>Las columnas de ejecución se han mantenido completas conforme a <code>execution_sheet_columns</code>.</p></div></div></section>
+
+<section class="section"><div class="section-label"><strong>06</strong> · Explicación para cliente</div>
+<div class="quote">Sin plan por tipología el marcado se rehace en cada cambio de plantilla y las tipologías con más valor comercial quedan sin cubrir.</div></section>
+
+<section class="section"><div class="section-label"><strong>07</strong> · Plantilla para comunicar al cliente</div>
+<div class="client-template-grid"><div class="email-card"><div class="email-top"><b>Correo resuelto para PLAUD</b><span>TPL-151</span></div>
+<div class="email-body">Hola equipo PLAUD,
+
+Revisando es.plaud.ai, he detectado un punto SEO que conviene trabajar:
+
+Plan de datos estructurados por tipología ausente
+
+Qué estamos viendo
+El marcado se aplica de forma desigual: cada tipología de página lleva el schema que le tocó y no existe un plan que declare qué tipo corresponde a cada una.
+
+Por qué importa
+Sin plan por tipología el marcado se rehace en cada cambio de plantilla y las tipologías con más valor comercial quedan sin cubrir.
+
+No es una urgencia crítica, pero sí una mejora que conviene incorporar al roadmap.
+
+Qué propongo
+Declarar el tipo de schema y sus propiedades obligatorias por tipología de página, e implementarlo en plantilla con validación.
+
+Una vez implementado, validaremos el cambio con este criterio: Cada tipología de página tiene su tipo de schema declarado, implementado en plantilla y validado sin errores.
+
+Si os parece bien, lo incorporamos al roadmap como P2 y dejamos documentado el antes y el después.
+
+Gracias,
+David</div></div><div class="card"><h2>Mensaje corto</h2><div class="short-message">Equipo PLAUD: Plan de datos estructurados por tipología ausente. El export de structured data contiene 42 URLs /products/ con errores; 21 son indexables. El patrón de validación confirmado por el usuario es `referencePrice` dentro de `priceSpecification`. Propuesta: Corregir la plantilla Product/Offer una sola vez para retirar `referencePrice`. El precio activo se expresa con `price`/`priceCurrency`; el precio original de una oferta, si existe, con `UnitPriceSpecification.priceType = https://schema.org/StrikethroughPrice`. Cierre: QA documentado.</div></div></div></section>
+
+<section class="section"><div class="section-label"><strong>08</strong> · Hoja de ejecución</div>
+<div class="card dark"><h2>EXECUTION SHEET · TPL-151</h2><p>16 columnas oficiales · 8 filas precargadas con evidencia real.</p>
+<p style="margin-top:14px"><a class="btn" style="background:white;color:#0B1E4B" href="execution/151-plan-de-datos-estructurados-por-tipologia-ausente-sheet.html">Abrir hoja operativa →</a></p></div></section>
+
+<div class="bottom"><div>PLAUD · Auditoría SEP26 · fuentes: Audit M3 + Screaming Frog + histórico KWR + robots/sitemap cuando aplica.</div><div><strong>PLANTILLA UTILIZADA: TPL-151</strong></div></div>
+</main></body></html>
