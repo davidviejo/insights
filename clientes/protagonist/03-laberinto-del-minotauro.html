@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>El Laberinto del Minotauro · Protagonist</title><style>
 :root{
  --ink:#18283a; --navy:#17324d; --blue:#078dcc; --blue-2:#0aa0df;
@@ -48,7 +49,187 @@ h1{font-size:clamp(38px,5.6vw,68px);line-height:.98;letter-spacing:-.05em;margin
 .footer-signature img{width:92px;height:auto;display:block;opacity:.82}
 .footer-signature span{white-space:nowrap}
 @media(max-width:640px){.footer-signature{justify-content:flex-start;text-align:left;margin-top:10px}.footer-signature img{width:84px}.footer-signature span{white-space:normal}}
-</style></head><body><header class="top"><div class="inner"><div class="clientmark"><strong>PROTAGONIST</strong><span></span><small>Propuesta de contenidos</small></div></div></header><main class="wrap">
+
+/* ===== Navegación de propuestas · cliente ===== */
+.top{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,.975);
+  backdrop-filter:blur(10px);
+  box-shadow:0 1px 0 rgba(23,50,77,.05);
+}
+.top .inner{
+  min-height:62px;
+}
+.header-logo{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  flex:0 0 auto;
+}
+.header-logo img{
+  display:block;
+  width:auto;
+  height:28px;
+  max-width:150px;
+  object-fit:contain;
+}
+.proposal-menu-wrap{
+  border-top:1px solid #edf2f6;
+  background:#fff;
+}
+.proposal-menu-inner{
+  max-width:1240px;
+  margin:auto;
+  padding:8px 24px 9px;
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:12px;
+  align-items:center;
+}
+.proposal-menu-label{
+  font-size:9px;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#718396;
+  white-space:nowrap;
+}
+.proposal-menu{
+  position:relative;
+  display:flex;
+  gap:7px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scroll-behavior:smooth;
+  scroll-snap-type:x proximity;
+  overscroll-behavior-x:contain;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+  scrollbar-color:#b9cad8 transparent;
+  padding:1px 2px 5px;
+}
+.proposal-menu::-webkit-scrollbar{height:5px}
+.proposal-menu::-webkit-scrollbar-track{background:transparent}
+.proposal-menu::-webkit-scrollbar-thumb{
+  background:#c3d1dc;
+  border-radius:999px;
+}
+.proposal-menu a{
+  flex:0 0 auto;
+  scroll-snap-align:start;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  min-height:34px;
+  padding:7px 11px;
+  border:1px solid #dce4eb;
+  border-radius:999px;
+  background:#fff;
+  color:#42586d;
+  font-size:10.5px;
+  font-weight:720;
+  white-space:nowrap;
+  transition:border-color .15s ease,background .15s ease,color .15s ease;
+}
+.proposal-menu a .menu-num{
+  color:#078dcc;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.04em;
+}
+.proposal-menu a:hover{
+  color:#057db8;
+  border-color:#9ed1e8;
+  background:#f5fbfe;
+}
+.proposal-menu a.active{
+  color:#fff;
+  background:#078dcc;
+  border-color:#078dcc;
+  box-shadow:0 3px 10px rgba(7,141,204,.14);
+}
+.proposal-menu a.active .menu-num{color:#dff4fd}
+.footer{
+  align-items:center;
+}
+.footer .footer-consultant{
+  color:#728397;
+  font-size:10px;
+  text-align:right;
+  white-space:nowrap;
+}
+.footer img{display:none!important}
+
+@media(max-width:760px){
+  .top .inner{
+    min-height:56px;
+    padding:10px 16px;
+  }
+  .clientmark strong{font-size:13px}
+  .clientmark small{font-size:8px;letter-spacing:.1em}
+  .header-logo img{
+    height:22px;
+    max-width:118px;
+  }
+  .proposal-menu-inner{
+    display:block;
+    padding:7px 0 8px;
+  }
+  .proposal-menu-label{
+    display:none;
+  }
+  .proposal-menu{
+    gap:6px;
+    padding:0 16px 5px;
+    scrollbar-width:none;
+  }
+  .proposal-menu::-webkit-scrollbar{display:none}
+  .proposal-menu a{
+    min-height:36px;
+    padding:8px 11px;
+    font-size:10px;
+  }
+  .footer{
+    gap:8px;
+  }
+  .footer .footer-consultant{
+    white-space:normal;
+    text-align:right;
+  }
+}
+
+@media(max-width:460px){
+  .clientmark span{display:none}
+  .clientmark small{
+    display:block;
+    max-width:116px;
+    line-height:1.25;
+  }
+  .header-logo img{
+    height:20px;
+    max-width:108px;
+  }
+  .proposal-menu{
+    padding-left:12px;
+    padding-right:12px;
+  }
+  .proposal-menu a{
+    font-size:9.5px;
+  }
+  .footer{
+    display:block;
+  }
+  .footer .footer-consultant{
+    margin-top:6px;
+    text-align:left;
+  }
+}
+
+</style></head><body><header class="top"><div class="inner"><div class="clientmark"><strong>PROTAGONIST</strong><span></span><small>Propuesta de contenidos</small></div><div class="header-logo"><img alt="David Viejo" src="data:image/png;base64,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"/></div></div><div class="proposal-menu-wrap"><div class="proposal-menu-inner"><div class="proposal-menu-label">Propuestas de contenido</div><nav aria-label="Propuestas de contenido" class="proposal-menu"><a class="proposal-menu-link" href="01-home.html"><span class="menu-num">01</span><span>Home</span></a><a class="proposal-menu-link" href="02-en-la-mente-de-un-genio.html"><span class="menu-num">02</span><span>En la mente de un genio</span></a><a aria-current="page" class="proposal-menu-link active" href="03-laberinto-del-minotauro.html"><span class="menu-num">03</span><span>Laberinto del Minotauro</span></a><a class="proposal-menu-link" href="04-crysis.html"><span class="menu-num">04</span><span>Crysis</span></a><a class="proposal-menu-link" href="05-grupos-grandes.html"><span class="menu-num">05</span><span>Grupos grandes</span></a><a class="proposal-menu-link" href="06-empresas-team-building.html"><span class="menu-num">06</span><span>Empresas</span></a><a class="proposal-menu-link" href="07-despedidas.html"><span class="menu-num">07</span><span>Despedidas</span></a><a class="proposal-menu-link" href="08-reservas.html"><span class="menu-num">08</span><span>Reservas</span></a><a class="proposal-menu-link" href="09-familias-ninos.html"><span class="menu-num">09</span><span>Familias y niños</span></a><a class="proposal-menu-link" href="10-escape-room-9-personas.html"><span class="menu-num">10</span><span>9 personas</span></a><a class="proposal-menu-link" href="11-escape-room-10-personas.html"><span class="menu-num">11</span><span>10 personas</span></a><a class="proposal-menu-link" href="12-contacto.html"><span class="menu-num">12</span><span>Contacto</span></a><a class="proposal-menu-link" href="13-que-escape-room-elegir.html"><span class="menu-num">13</span><span>Qué escape room elegir</span></a><a class="proposal-menu-link" href="14-opiniones-reconocimientos.html"><span class="menu-num">14</span><span>Opiniones</span></a><a class="proposal-menu-link" href="15-sobre-protagonist.html"><span class="menu-num">15</span><span>Sobre Protagonist</span></a></nav></div></div></header><main class="wrap">
 <section class="hero"><div class="eyebrow">03 · Propuesta editorial</div><h1>El Laberinto del Minotauro</h1><p class="lead">La página actual es muy corta y la narrativa es casi todo el contenido. Necesita información de decisión, público, FAQs y conexiones con la arquitectura principal.</p><div class="badges"><span class="badge blue">ALTA</span><span class="badge">Ficha de producto / experiencia</span><span class="badge">378 palabras aprox.</span></div></section>
 <section class="section"><div class="sectionhead"><div class="num">01</div><h2>Situación y propuesta</h2></div><div class="grid2"><div class="card"><h3>Situación actual</h3><p class="statement">La página actual es muy corta y la narrativa es casi todo el contenido. Necesita información de decisión, público, FAQs y conexiones con la arquitectura principal.</p></div><div class="card accent"><h3>Propuesta</h3><p class="statement">Reforzar la claridad de la página, cubrir mejor la intención de búsqueda y presentar la propuesta de valor de forma más directa.</p></div></div></section>
 <section class="section"><div class="sectionhead"><div class="num">02</div><h2>Presentación SEO propuesta</h2></div><div class="preview"><div class="panel"><div class="paneltop"><b>Vista previa en buscador</b><span>Propuesta</span></div><div class="panelbody"><div class="serp"><small>www.protagonist.es/escape-room-laberinto-minotauro</small><h3></h3><p></p></div></div></div><div class="panel"><div class="paneltop"><b>Resumen de la página</b><span>SEO + contenido</span></div><div class="panelbody"><ul class="info-list"><li><b>Intención</b><span>Ficha de producto / experiencia</span></li><li><b>H1</b><span>El Laberinto del Minotauro: escape room de aventura en Zaragoza</span></li><li><b>Extensión</b><span>378 palabras aprox.</span></li><li><b>Estado URL</b><span>URL actual · se mantiene</span></li></ul></div></div></div></section>
@@ -81,5 +262,16 @@ h1{font-size:clamp(38px,5.6vw,68px);line-height:.98;letter-spacing:-.05em;margin
 <h2>Reserva El Laberinto del Minotauro</h2>
 <p>Elegid una sesión disponible y preparaos para entrar en una aventura inspirada en uno de los mitos más conocidos de la Antigua Grecia.</p>
 </div></div></section>
-<section class="section"><div class="sectionhead"><div class="num">06</div><h2>Revisión técnica previa</h2></div><div class="review"><div class="pending"><strong>Datos de negocio a confirmar antes de publicar.</strong><br/>Datos a confirmar. Datos que deben estar confirmados. Confirmar condiciones exactas para menores antes de fijar una edad mínima.</div><div class="tech-review"><div class="done">Revisión realizada por el equipo técnico</div><h3>Comprobaciones sobre la propuesta</h3><p>Se ha revisado la coherencia editorial y SEO del contenido propuesto antes de presentarlo al cliente.</p><ul><li>Jerarquía de encabezados y orden de lectura.</li><li>Correspondencia entre intención, Title, Meta description y H1.</li><li>Coherencia interna de nombres, capacidades y duración dentro de la propuesta.</li><li>Eliminación de afirmaciones no verificables o marcadas para confirmación.</li></ul></div></div></section>
-<footer class="footer"><p>Protagonist · Propuesta de contenidos para revisión de cliente.</p><div class="sig footer-signature"><img alt="David Viejo" src="data:image/png;base64,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"/><span>Preparado por David Viejo · SEO Strategic</span></div></footer></main><script>function copyContent(e){navigator.clipboard.writeText(document.getElementById('finalContent').innerText).then(()=>{const b=e.target,t=b.textContent;b.textContent='Copiado ✓';setTimeout(()=>b.textContent=t,900)})};</script></body></html>
+
+<footer class="footer"><p>Protagonist · Propuesta de contenidos para revisión de cliente.</p><div class="footer-consultant">Preparado por David Viejo · SEO Strategic</div></footer></main><script>function copyContent(e){navigator.clipboard.writeText(document.getElementById('finalContent').innerText).then(()=>{const b=e.target,t=b.textContent;b.textContent='Copiado ✓';setTimeout(()=>b.textContent=t,900)})};</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var active = document.querySelector('.proposal-menu a.active');
+  if(active){
+    requestAnimationFrame(function(){
+      active.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+    });
+  }
+});
+</script>
+</body></html>
